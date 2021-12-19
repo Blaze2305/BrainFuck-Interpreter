@@ -1,7 +1,6 @@
 SOURCE_DIR = src
 SOURCES = $(wildcard *.cpp) $(wildcard src/*/*.cpp)
 BUILD_DIR = bin
-TEST_FILE_NAME = test.txt
 
 ifeq ($(OS),Windows_NT) 
 GXX := cl /EHsc /std:c++17
@@ -37,9 +36,3 @@ buildDir: |clean
 clean:
 	 ${DELETE_FOLDER} $(BUILD_DIR) | echo Done
 .PHONY: clean
-
-
-test: |build
-	${CLEAR_SCREEN}
-	$(BUILD_DIR)/$(BUILD_NAME) $(TEST_FILE_NAME)
-.PHONY: test
