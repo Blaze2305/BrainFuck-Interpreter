@@ -16,5 +16,7 @@ int main(int argc, char *argv[]){
 	
 	Interpreter interpreter(argv[1]);
 
+	interpreter.run();
+	std::cout<<"\n";
 	return 0;
 }
